@@ -1,41 +1,33 @@
 import { Link } from "react-router";
-import { useEffect, useState } from "react";
 
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
 export function Welcome() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
-  }, []);
-
   return (
-    <div className="welcome">
-      {/* HEADER: hanya menggeser logo ke kiri */}
-      <header
-        style={{
-          width: "100%",
-          padding: "16px",
-          boxSizing: "border-box",
-        }}
-      >
-        <img
-          src={isDark ? logoDark : logoLight}
-          alt="Logo"
-          style={{
-            height: "32px",
-          }}
-        />
+    <main className="flex min-h-screen flex-col items-center justify-center">
+      {/* HANYA ubah alignment container logo */}
+      <header className="flex w-full flex-col items-start gap-6 px-4">
+        <div className="flex flex-col items-start gap-4">
+          <img
+            src={logoLight}
+            alt="React Router"
+            className="block w-full max-w-[160px] dark:hidden"
+          />
+          <img
+            src={logoDark}
+            alt="React Router"
+            className="hidden w-full max-w-[160px] dark:block"
+          />
+        </div>
       </header>
 
-      {/* BODY: struktur template TIDAK DIUBAH */}
-      <main className="welcome-content">
-        <h1>ROOM</h1>
+      {/* BAGIAN INI TIDAK DIUBAH */}
+      <div className="max-w-[300px] w-full space-y-6 px-4">
+        <h1 className="text-center text-3xl font-bold">ROOM</h1>
 
         <nav>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <Link to="https://reactrouter.com/docs">
                 React Router Docs
@@ -48,7 +40,7 @@ export function Welcome() {
             </li>
           </ul>
         </nav>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
