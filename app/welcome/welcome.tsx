@@ -1,6 +1,6 @@
 import React from "react";
-import Splash from "../assets/splash.svg"; // nanti diganti path splash.svg
-import Logo from "../assets/logo-light.svg"; // logo SVG
+import Splash from "../splash.svg"; // nanti diganti path splash.svg
+import Logo from "../logo-light.svg"; // logo SVG
 
 const Welcome: React.FC = () => {
   return (
