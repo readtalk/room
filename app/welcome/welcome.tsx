@@ -1,58 +1,46 @@
-import { useEffect, useState } from 'react';
-import SplashLogo from './splash.svg'; // pastikan file ada di folder yang sama
+import React from "react";
+import Splash from "../assets/splash.svg"; // nanti diganti path splash.svg
+import Logo from "../assets/logo-light.svg"; // logo SVG
 
-export default function Welcome() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 1800); // 1.8 detik splash
-    return () => clearTimeout(timer);
-  }, []);
-
+const Welcome: React.FC = () => {
   return (
-    <>
-      {showSplash && (
-        <div className="splash-screen">
-          <SplashLogo className="splash-logo" />
+    <div className="app-container">
+      {/* Splash screen */}
+      <div className="splash-screen">
+        <img src={Splash} alt="Splash" className="splash-img" />
+      </div>
+
+      {/* Header / UP */}
+      <header className="header">
+        <img src={Logo} alt="Logo" className="logo" />
+        <div className="header-actions">
+          <span className="icon-camera">&#128247;</span> {/* placeholder */}
+          <span className="menu">&#x22EE;</span>
         </div>
-      )}
+      </header>
 
-      {!showSplash && (
-        <div className="welcome-container">
-          {/* HEADER UP */}
-          <header className="header">
-            <div className="logo">
-              {/* Logo SVG READTalk */}
-              <img src="/assets/logo-light.svg" alt="READTalk Logo" />
-            </div>
-            <div className="header-actions">
-              <span className="camera">📷</span>
-              <span className="menu">⋮</span>
-            </div>
-          </header>
+      {/* Search area */}
+      <div className="search-area">
+        <input type="text" placeholder="Search..." />
+      </div>
 
-          {/* SEARCH AREA */}
-          <div className="search-area">
-            <input type="text" placeholder="Cari chat..." />
-          </div>
+      {/* Center placeholder */}
+      <div className="center-placeholder">
+        Chat content will appear here.
+      </div>
 
-          {/* CENTER PLACEHOLDER */}
-          <div className="center-placeholder">
-            Pilih chat atau mulai percakapan baru
-          </div>
+      {/* FAB / + button */}
+      <div className="fab">+</div>
 
-          {/* BOTTOM NAV */}
-          <nav className="bottom-nav">
-            <div className="nav-item">Chat</div>
-            <div className="nav-item">Kontak</div>
-            <div className="nav-item">Status</div>
-            <div className="nav-item">Pengaturan</div>
-          </nav>
-
-          {/* FAB + */}
-          <div className="fab">+</div>
-        </div>
-      )}
-    </>
+      {/* Bottom nav / DOWN */}
+      <nav className="bottom-nav">
+        <div className="nav-item">Chats</div>
+        <div className="nav-item">Status</div>
+        <div className="nav-item">Calls</div>
+        <div className="nav-item">Settings</div>
+      </nav>
+    </div>
   );
-}
+};
+
+export default Welcome;
