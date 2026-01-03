@@ -29,12 +29,12 @@ body, html {
   height: 50px;
   padding: 0 1rem;
   background-color: var(--bg-default);
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 /* Logo responsive */
 .header .logo {
-  height: 65px;   /* lebih besar */
+  height: 70px;   /* lebih besar */
   width: auto;    /* proporsional */
 }
 
