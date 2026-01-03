@@ -1,0 +1,30 @@
+<main className="relative min-h-screen flex flex-col justify-between bg-default text-base">
+  <header className="flex justify-between items-start p-4 bg-header text-header">
+    <div className="flex items-center gap-2">
+      <img src={mounted ? logoDark : logoLight} alt="Logo" className="w-28 h-auto dark:hidden" />
+      <img src={mounted ? logoLight : logoDark} alt="Logo" className="w-28 h-auto hidden dark:block" />
+    </div>
+    <div className="text-2xl cursor-pointer">⋮</div>
+  </header>
+
+  <div className="px-4 py-2">
+    <input
+      type="text"
+      placeholder="Search"
+      className="w-full rounded-md p-2 border bg-input text-input"
+    />
+  </div>
+
+  <div className="flex-1"></div>
+
+  <footer className="grid grid-cols-2 gap-4 p-4 bg-footer text-footer">
+    <div className="p-4 text-center">Chat</div>
+    <div className="p-4 text-center">Stories</div>
+    <div className="p-4 text-center">Community</div>
+    <div className="p-4 text-center">Call</div>
+  </footer>
+
+  <button className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white">
+    +
+  </button>
+</main>
