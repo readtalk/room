@@ -34,7 +34,7 @@ body, html {
 
 /* Logo responsive */
 .header .logo {
-  height: 48px;   /* lebih besar */
+  height: 50px;   /* lebih besar */
   width: auto;    /* proporsional */
 }
 
