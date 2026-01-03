@@ -34,13 +34,13 @@ body, html {
 
 /* Logo responsive */
 .header .logo {
-  height: 60px;   /* lebih besar */
+  height: 65px;   /* lebih besar */
   width: auto;    /* proporsional */
 }
 
 /* 3 dots menu */
 .header .menu {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   cursor: pointer;
 }
 
@@ -51,10 +51,10 @@ body, html {
 }
 
 .search-area input {
-  width: 95%;
+  width: 96%;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   font-size: 1rem;
 }
 
@@ -76,7 +76,7 @@ body, html {
   justify-content: space-around;
   align-items: center;
   height: 58px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 2px solid #e0e0e0;
   background-color: var(--bg-default);
 }
 
