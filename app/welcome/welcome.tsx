@@ -1,46 +1,56 @@
-import { Link } from "react-router";
-
-import logoDark from "./logo-dark.svg";
+import { Link } from "react-router-dom";
 import logoLight from "./logo-light.svg";
+import logoDark from "./logo-dark.svg";
 
 export function Welcome() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <header className="flex flex-col items-center gap-6">
-        {/* SATU-SATUNYA PERUBAHAN DI SINI */}
-        <div className="flex flex-col gap-4 self-start pl-4">
-          <img
-            src={logoLight}
-            alt="React Router"
-            className="block w-full max-w-[160px] dark:hidden"
-          />
-          <img
-            src={logoDark}
-            alt="React Router"
-            className="hidden w-full max-w-[160px] dark:block"
-          />
-        </div>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* UP */}
+      <header
+        style={{
+          height: "56px",
+          display: "flex",
+          alignItems: "center",
+          padding: "0 16px",
+          fontWeight: 700,
+          fontSize: "20px",
+        }}
+      >
+        <picture>
+          <source srcSet={logoDark} media="(prefers-color-scheme: dark)" />
+          <img src={logoLight} alt="READTalk" height={28} />
+        </picture>
       </header>
 
-      {/* BAGIAN INI TIDAK DIUBAH SAMA SEKALI */}
-      <div className="max-w-[300px] w-full space-y-6 px-4">
-        <h1 className="text-center text-3xl font-bold">ROOM</h1>
+      {/* CENTER */}
+      <main
+        style={{
+          flex: 1,
+        }}
+      />
 
-        <nav>
-          <ul className="space-y-2">
-            <li>
-              <Link to="https://reactrouter.com/docs">
-                React Router Docs
-              </Link>
-            </li>
-            <li>
-              <Link to="https://discord.gg/reactrouter">
-                Join Discord
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </main>
+      {/* DOWN */}
+      <footer
+        style={{
+          height: "56px",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          borderTop: "1px solid rgba(0,0,0,0.1)",
+          fontSize: "12px",
+        }}
+      >
+        <Link to="#">Chat</Link>
+        <Link to="#">Stories</Link>
+        <Link to="#">Community</Link>
+        <Link to="#">Call</Link>
+      </footer>
+    </div>
   );
 }
