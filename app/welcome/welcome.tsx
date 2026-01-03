@@ -6,9 +6,9 @@ import logoLight from "./logo-light.svg";
 export function Welcome() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      {/* HANYA ubah alignment container logo */}
-      <header className="flex w-full flex-col items-start gap-6 px-4">
-        <div className="flex flex-col items-start gap-4">
+      <header className="flex flex-col items-center gap-6">
+        {/* SATU-SATUNYA PERUBAHAN DI SINI */}
+        <div className="flex flex-col gap-4 self-start pl-4">
           <img
             src={logoLight}
             alt="React Router"
@@ -22,7 +22,7 @@ export function Welcome() {
         </div>
       </header>
 
-      {/* BAGIAN INI TIDAK DIUBAH */}
+      {/* BAGIAN INI TIDAK DIUBAH SAMA SEKALI */}
       <div className="max-w-[300px] w-full space-y-6 px-4">
         <h1 className="text-center text-3xl font-bold">ROOM</h1>
 
