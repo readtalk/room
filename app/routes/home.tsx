@@ -4,12 +4,14 @@ import logoLight from "../welcome/logo-light.svg";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="app-container">
       {/* UP */}
       <header className="header">
         <img src={logoLight} alt="READTalk Logo" className="logo" />
         <div className="menu">⋮</div>
       </header>
+
+      {/* Search area */}
       <div className="search-area">Search...</div>
 
       {/* CENTER */}
