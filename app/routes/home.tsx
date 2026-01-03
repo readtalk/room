@@ -5,19 +5,23 @@ import logoLight from "../welcome/logo-light.svg";
 export default function Home() {
   return (
     <div className="app-container">
-      {/* UP */}
+      {/* UP / Header */}
       <header className="header">
         <img src={logoLight} alt="READTalk Logo" className="logo" />
         <div className="menu">⋮</div>
       </header>
 
-      {/* Search area */}
-      <div className="search-area">Search...</div>
+      {/* Search input area */}
+      <div className="search-area">
+        <input type="text" placeholder="Search..." />
+      </div>
 
-      {/* CENTER */}
-      <div className="center-placeholder">Center content placeholder</div>
+      {/* CENTER placeholder */}
+      <div className="center-placeholder">
+        Center content placeholder
+      </div>
 
-      {/* DOWN / Bottom Nav */}
+      {/* DOWN / Bottom nav */}
       <nav className="bottom-nav">
         <div className="nav-item">Chat</div>
         <div className="nav-item">Stories</div>
@@ -25,7 +29,7 @@ export default function Home() {
         <div className="nav-item">Call</div>
       </nav>
 
-      {/* FAB */}
+      {/* FAB / + button */}
       <div className="fab">+</div>
     </div>
   );
