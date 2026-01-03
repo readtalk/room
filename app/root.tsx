@@ -23,19 +23,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
-  );
+  return <>{children}</>;
 }
 
 export default function App() {
@@ -63,17 +51,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <html>
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <h1>{message}</h1>
-        <p>{details}</p>
-        {stack && <pre>{stack}</pre>}
-        <Scripts />
-      </body>
-    </html>
+    <>
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack && <pre>{stack}</pre>}
+    </>
   );
 }
