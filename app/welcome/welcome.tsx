@@ -29,7 +29,7 @@ export function Welcome() {
 
       {/* Konten asli template (tetap di tengah, TIDAK dihapus) */}
       <div className="flex flex-col items-center gap-8 text-center">
-        <h1 className="text-4xl font-bold">Welcome to React Router</h1>
+        <h1 className="text-4xl font-bold">React Router</h1>
 
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md">
           This is a starter template using React Router with Cloudflare Workers.
