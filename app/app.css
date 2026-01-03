@@ -1,30 +1,90 @@
-<main className="relative min-h-screen flex flex-col justify-between bg-default text-base">
-  <header className="flex justify-between items-start p-4 bg-header text-header">
-    <div className="flex items-center gap-2">
-      <img src={mounted ? logoDark : logoLight} alt="Logo" className="w-28 h-auto dark:hidden" />
-      <img src={mounted ? logoLight : logoDark} alt="Logo" className="w-28 h-auto hidden dark:block" />
-    </div>
-    <div className="text-2xl cursor-pointer">⋮</div>
-  </header>
+/* Global styling READTalk */
+:root {
+  --primary-color: #ff0000; /* READTalk red */
+  --bg-default: #ffffff;
+  --text-default: #000000;
+}
 
-  <div className="px-4 py-2">
-    <input
-      type="text"
-      placeholder="Search"
-      className="w-full rounded-md p-2 border bg-input text-input"
-    />
-  </div>
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-default);
+  color: var(--text-default);
+}
 
-  <div className="flex-1"></div>
+/* Header / UP */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-default);
+  border-bottom: 1px solid #e0e0e0;
+}
 
-  <footer className="grid grid-cols-2 gap-4 p-4 bg-footer text-footer">
-    <div className="p-4 text-center">Chat</div>
-    <div className="p-4 text-center">Stories</div>
-    <div className="p-4 text-center">Community</div>
-    <div className="p-4 text-center">Call</div>
-  </footer>
+/* Logo */
+.header .logo {
+  width: 36px;
+  height: 36px;
+}
 
-  <button className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white">
-    +
-  </button>
-</main>
+/* 3 dots menu */
+.header .menu {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Search area under header */
+.search-area {
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+/* Center placeholder */
+.center-placeholder {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Bottom nav / DOWN */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid #e0e0e0;
+  background-color: var(--bg-default);
+}
+
+.bottom-nav .nav-item {
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--text-default);
+}
+
+/* FAB / + button */
+.fab {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
