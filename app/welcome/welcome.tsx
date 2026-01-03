@@ -8,35 +8,46 @@ export function Welcome() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <main className="relative min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col justify-between">
-      {/* UP: logo + teks */}
-      <header className="flex items-center gap-4 p-4">
-        <img
-          src={mounted ? logoDark : logoLight}
-          alt="Logo"
-          className="w-28 h-auto dark:hidden"
-        />
-        <img
-          src={mounted ? logoLight : logoDark}
-          alt="Logo"
-          className="w-28 h-auto hidden dark:block"
-        />
-        <h1 className="text-2xl font-bold">WhatsApp</h1>
+    <main className="relative min-h-screen flex flex-col justify-between">
+      {/* UP: logo kiri atas, 3 titik kanan atas, search bar */}
+      <header className="flex justify-between items-start p-4">
+        <div className="flex items-center gap-2">
+          <img
+            src={mounted ? logoDark : logoLight}
+            alt="Logo"
+            className="w-28 h-auto dark:hidden"
+          />
+          <img
+            src={mounted ? logoLight : logoDark}
+            alt="Logo"
+            className="w-28 h-auto hidden dark:block"
+          />
+        </div>
+        <div className="text-2xl cursor-pointer">⋮</div>
       </header>
 
-      {/* CENTER: kosong, untuk template bawaan */}
+      {/* Search text area */}
+      <div className="px-4 py-2">
+        <input
+          type="text"
+          placeholder="Search"
+          className="w-full rounded-md p-2"
+        />
+      </div>
+
+      {/* CENTER: kosong */}
       <div className="flex-1"></div>
 
-      {/* DOWN: 4 blok */}
+      {/* DOWN: 4 blok layout bawah */}
       <footer className="grid grid-cols-2 gap-4 p-4">
-        <div className="rounded-md bg-blue-600 text-white p-4 text-center">Chat</div>
-        <div className="rounded-md bg-green-600 text-white p-4 text-center">Stories</div>
-        <div className="rounded-md bg-yellow-500 text-white p-4 text-center">Community</div>
-        <div className="rounded-md bg-purple-600 text-white p-4 text-center">Call</div>
+        <div className="p-4 text-center">Chat</div>
+        <div className="p-4 text-center">Stories</div>
+        <div className="p-4 text-center">Community</div>
+        <div className="p-4 text-center">Call</div>
       </footer>
 
       {/* Tombol + di pojok kanan bawah */}
-      <button className="fixed bottom-6 right-6 w-14 h-14 bg-pink-500 rounded-full text-white text-2xl">
+      <button className="fixed bottom-6 right-6 w-14 h-14 rounded-full">
         +
       </button>
     </main>
