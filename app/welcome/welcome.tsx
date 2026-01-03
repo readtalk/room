@@ -1,20 +1,16 @@
-import { Link } from "react-router";
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
 export function Welcome() {
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center">
-      {/* Logo – pojok kiri atas */}
-      <div className="absolute top-4 left-4">
+    <main className="relative min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col justify-between">
+      {/* UP: logo + teks */}
+      <header className="flex items-center gap-4 p-4">
         <img
           src={mounted ? logoDark : logoLight}
           alt="Logo"
@@ -25,25 +21,24 @@ export function Welcome() {
           alt="Logo"
           className="w-28 h-auto hidden dark:block"
         />
-      </div>
+        <h1 className="text-2xl font-bold">WhatsApp</h1>
+      </header>
 
-      {/* Konten landing */}
-      <div className="flex flex-col items-center gap-8 text-center">
-        <h1 className="text-4xl font-bold">Welcome to READTalk</h1>
+      {/* CENTER: kosong, untuk template bawaan */}
+      <div className="flex-1"></div>
 
-        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md">
-          This is the starter template using React Router with Cloudflare Workers.
-        </p>
+      {/* DOWN: 4 blok */}
+      <footer className="grid grid-cols-2 gap-4 p-4">
+        <div className="rounded-md bg-blue-600 text-white p-4 text-center">Chat</div>
+        <div className="rounded-md bg-green-600 text-white p-4 text-center">Stories</div>
+        <div className="rounded-md bg-yellow-500 text-white p-4 text-center">Community</div>
+        <div className="rounded-md bg-purple-600 text-white p-4 text-center">Call</div>
+      </footer>
 
-        <div className="flex gap-4">
-          <Link
-            to="/home"
-            className="rounded-md bg-black px-4 py-2 text-white dark:bg-white dark:text-black"
-          >
-            Get Started
-          </Link>
-        </div>
-      </div>
+      {/* Tombol + di pojok kanan bawah */}
+      <button className="fixed bottom-6 right-6 w-14 h-14 bg-pink-500 rounded-full text-white text-2xl">
+        +
+      </button>
     </main>
   );
 }
