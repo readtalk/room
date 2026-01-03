@@ -26,7 +26,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 58px;
+  height: 55px;
   padding: 0 1rem;
   background-color: var(--bg-default);
   border-bottom: 1px solid #e0e0e0;
@@ -34,7 +34,7 @@ body, html {
 
 /* Logo responsive */
 .header .logo {
-  height: 50px;   /* lebih besar */
+  height: 55px;   /* lebih besar */
   width: auto;    /* proporsional */
 }
 
@@ -51,7 +51,7 @@ body, html {
 }
 
 .search-area input {
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
