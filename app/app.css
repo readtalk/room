@@ -1,0 +1,138 @@
+/* Global styling READTalk */
+:root {
+  --primary-color: #ff0000; /* READTalk red */
+  --bg-default: #ffffff;
+  --text-default: #000000;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-default);
+  color: var(--text-default);
+}
+
+/* Container utama flex-col full viewport */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header / UP */
+.header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 1rem;
+  background-color: var(--bg-default);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.header .logo img {
+  height: 50px;   /* ukuran profesional ala WhatsApp */
+  width: auto;
+}
+
+.header .header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header .menu,
+.header .camera {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Search input area */
+.search-area {
+  flex: 0 0 auto;
+  margin: 0.5rem 1rem;
+}
+
+.search-area input {
+  width: 96%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Center placeholder */
+.center-placeholder {
+  flex: 1 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Bottom nav / DOWN */
+.bottom-nav {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 58px;
+  border-top: 2px solid #e0e0e0;
+  background-color: var(--bg-default);
+}
+
+.bottom-nav .nav-item {
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--text-default);
+}
+
+/* FAB / + button */
+.fab {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Splash screen full screen */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-default);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.splash-logo {
+  width: 120px; /* bisa disesuaikan */
+  height: auto;
+}
+
+/* Fade out splash */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
