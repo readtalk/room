@@ -1,23 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../app.css";
 import logoLight from "./logo-light.svg";
-import logoDark from "./logo-dark.svg";
 
 export default function Welcome() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* UP */}
+    <div className="app-container">
+      {/* UP / Header */}
       <header className="header">
         <img src={logoLight} alt="READTalk Logo" className="logo" />
         <div className="menu">⋮</div>
       </header>
-      <div className="search-area">Search...</div>
 
-      {/* CENTER */}
-      <div className="center-placeholder">Center content placeholder</div>
+      {/* Search input area */}
+      <div className="search-area">
+        <input type="text" placeholder="Search..." />
+      </div>
 
-      {/* DOWN / Bottom Nav */}
+      {/* CENTER placeholder */}
+      <div className="center-placeholder">
+        Welcome content placeholder
+      </div>
+
+      {/* DOWN / Bottom nav */}
       <nav className="bottom-nav">
         <div className="nav-item">Chat</div>
         <div className="nav-item">Stories</div>
@@ -25,7 +29,7 @@ export default function Welcome() {
         <div className="nav-item">Call</div>
       </nav>
 
-      {/* FAB */}
+      {/* FAB / + button */}
       <div className="fab">+</div>
     </div>
   );
